@@ -1,0 +1,21 @@
+@import "bootstrap";
+@import "font-awesome";
+
+html,
+body {
+  height: 100%;
+  background-color: #fff;
+}
+
+.cover {
+    padding-top: 240px;
+  }
+  
+.cover .btn-lg {
+    padding: .75rem 1.25rem;
+    font-weight: 700;
+}
+
+.cover-container{
+    max-width: 42em;
+}

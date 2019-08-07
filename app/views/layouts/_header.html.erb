@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #7fffd4;">
+    <div class="container">
+        <a class="navbar-brand" href="/"><i class="fa fa-hashtag mx-2"></i> E-learning system</a>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <%= link_to "Home", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Users", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Lessons", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "log_in", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "sgin_up", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="dropdown-menu">
+                    <%= link_to "Profile", root_path, class: "dropdown-item" %>
+                    <%= link_to "Settings", root_path, class: "dropdown-item" %>
+                    <%= link_to "Logout", root_path, method: :delete, class: "dropdown-item" %>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
