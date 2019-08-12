@@ -12,19 +12,21 @@
             <li class="nav-item">
                 <%= link_to "Lessons", root_path, class: "nav-link" %>
             </li>
-            <li class="nav-item">
-                <%= link_to "log_in", login_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "sgin_up", signup_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item dropdown">
-                <div class="dropdown-menu">
-                    <%= link_to "Profile", root_path, class: "dropdown-item" %>
-                    <%= link_to "Settings", root_path, class: "dropdown-item" %>
-                    <%= link_to "Logout", root_path, method: :delete, class: "dropdown-item" %>
-                </div>
-            </li>
+            <% if logged_in? %>
+                <li class="nav-item">
+                    <%= link_to current_user.name, root_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "log_out", logout_path, method: :delete, class: "nav-link" %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= link_to "log_in", login_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "sgin_up", signup_path, class: "nav-link" %>
+                </li>
+            <% end %>
         </ul>
     </div>
 </nav>
