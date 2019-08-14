@@ -1,0 +1,26 @@
+<h1 class= "text-center">Users</h1>
+<hr>
+
+<div class="paginate text-center">
+    <%= will_paginate %>
+</div>
+
+<div class="row">
+    <% @users.each do |user| %>
+        <div class="col-md-6">
+            <div class="media mb-3">
+                <div class="mr-3">
+                    <p>Image</p>
+                </div>
+
+                <div class="media-body">
+                    <h4><%= link_to user.name, user %></h4>
+                </div>
+            </div>
+        </div>    
+    <% end %>
+</div>
+
+<div class="paginate text-center">
+    <%= will_paginate %>
+</div>
