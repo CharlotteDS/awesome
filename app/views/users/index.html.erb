@@ -10,7 +10,11 @@
         <div class="col-md-6">
             <div class="media mb-3">
                 <div class="mr-3">
-                    <p>Image</p>
+                    <% if user.avatar? %>
+                        <%= image_tag user.avatar.url, class: "profile-size-small" %>
+                    <% else %>
+                        <%= image_tag "kompas.png", class: "profile-size-small" %>
+                    <% end %>
                 </div>
 
                 <div class="media-body">

@@ -8,7 +8,8 @@
 User.create!(
   name: "Kazuki",
   email: "fukuroushikuang@gmail.com",
-  password: "Abcd1234"
+  password: "Abcd1234",
+  is_admin: true
 )
 
 50.times do |n|
