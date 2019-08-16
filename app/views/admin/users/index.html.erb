@@ -15,7 +15,11 @@
                     <%= user.email %>
                 </td>
                 <td>
-                    <%= link_to "Add", "", class: "btn btn-outline-info btn-add-admin admin-btn-settings" %>
+                    <% if user.is_admin? %>
+                        <%= button_to "Remove", [:admin, user], method: :delete, class: "btn btn-outline-info btn-add-admin admin-btn-settings" %>
+                    <% else %>
+                        <%= button_to "Add", [:admin, user], method: :patch, class: "btn btn-outline-info btn-add-admin admin-btn-settings" %>
+                    <% end %>
                 </td>
             </tr>
         <% end %>

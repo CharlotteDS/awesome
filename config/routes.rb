@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :update, :destroy]
     get 'users/home'
   end
   get 'users/new'
