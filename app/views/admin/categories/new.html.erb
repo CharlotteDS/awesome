@@ -1,5 +1,7 @@
 <h1 class="text-center mt-4">New Category</h1>
-<%= form_for(:categories, url: "") do |f| %>
+<%= form_for([:admin, @category]) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
     <div class="mt-5 col-md-6 offset-md-3 text-left"> 
         <div class="form-group">
             <%= f.label :title %>
