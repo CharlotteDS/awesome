@@ -1,27 +1,31 @@
 <h1 class="mt-3 text-center">Administer Categories</h1>
-<div class="mt-3 col-md-6 offset-md-3 text-center">
-    <%= link_to "New Category", new_admin_category_path, class: "btn btn-outline-info"%>
-    <table class="table table-bordered mt-3" style="border-collapse: collapse;">
-        <tr>
-            <th class="title">Title</th>
-            <th class="description">Description</th>
-            <th class="eord">Settings</th>
-        </tr>
-        <tr>
-            <td>
-                ex
-            </td>
-            <td>
-                ex
-            </td>
-            <td>
-                <%= link_to "Edit", "", class: "link" %>/
-                <%= link_to "delete", "", class: "link" %>
-            </td>
-        </tr>
-    </table>
+<div class="mt-3 col-md-6 offset-md-3">
+    <div class="text-center">
+        <%= link_to "New Category", new_admin_category_path, class: "btn btn-outline-info"%>
+        <table class="table table-bordered mt-3" style="border-collapse: collapse;">
+            <tr>
+                <th class="title">Title</th>
+                <th class="description">Description</th>
+                <th class="eord">Settings</th>
+            </tr>
+            <% @categories.each do |category| %>
+                <tr>
+                    <td>
+                        <%= category.title %>
+                    </td>
+                    <td>
+                        <%= category.description %>
+                    </td>
+                    <td>
+                        <%= link_to "Edit", "", class: "link" %>/
+                        <%= link_to "delete", "", class: "link" %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
 
-    <div>	
+    <div class="mt-4">	
         <%= link_to "Back", admin_users_home_path, class: "link" %>
     </div>
 </div>
