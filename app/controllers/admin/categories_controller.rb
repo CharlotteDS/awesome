@@ -3,6 +3,19 @@ class Admin::CategoriesController < ApplicationController
     @categories = Category.paginate(page: params[:page])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(category_params)
+      redirect_to admin_categories_url
+    else
+      render 'edit'
+    end
+  end
+
   def new
     @category = Category.new
   end
@@ -19,7 +32,7 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.delete
+    @category.destroy
 
     redirect_to admin_categories_url
   end
