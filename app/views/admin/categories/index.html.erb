@@ -18,8 +18,7 @@
                     </td>
                     <td>
                         <%= link_to "Edit", "", class: "link" %>/
-                        <%= link_to "delete", "", class: "link" %>
-                    </td>
+                        <%= button_to "Delete", [:admin, category], method: :delete, class: "btn btn-outline-info btn-add-admin admin-btn-settings" %>                    </td>
                 </tr>
             <% end %>
         </table>
