@@ -21,5 +21,3 @@ class SessionsController < ApplicationController
     flash[:into] = "Successfully logged out."
 
     rediect_to root_rl
-  end
-end
