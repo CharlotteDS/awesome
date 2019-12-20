@@ -20,6 +20,4 @@ class SessionsController < ApplicationController
     log_out
     flash[:into] = "Successfully logged out."
 
-    redirect_to root_url
-  end
-end
+    rediect_to root_rl
